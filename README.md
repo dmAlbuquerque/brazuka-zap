@@ -24,7 +24,18 @@ At the beginning it will display a QR Code on Terminal, just scan it using Whats
 
 <br>
 
-## Send message to a contact
+# Table of Contents
+1. [Send message to one contact](#1)
+2. [Send the same message to many contacts](#2)
+3. [Send the image](#3)
+4. [Send the link preview](#4)
+5. [Send the location](#5)
+
+<br>
+
+<a name="1"></a>
+
+## Send message to one contact
 ```js
 const brazuka = require('brazuka-zap')
 
@@ -35,6 +46,8 @@ brazuka.sendMessage(phone, message)
 ``` 
 
 <br>
+
+<a name="2"></a>
 
 ## Send the same message to many contacts
 ```js
@@ -48,6 +61,7 @@ brazuka.sendMessage(phones, message)
 
 <br>
 
+<a name="3"></a>
 
 ## Send the Image
 ```js
@@ -58,9 +72,11 @@ const path   = 'path/to/image.jpg'
 const imageName = 'my-image-name'
 const text = 'my-caption'
 
-brazuka.sendImage(phone, path, imageName, message)
+brazuka.sendImage(phone, path, imageName, text)
 ``` 
 <br>
+
+<a name="4"></a>
 
 ## Send the link preview
 ```js
@@ -74,6 +90,8 @@ brazuka.sendLinkPreview(phone, message)
 ``` 
 
 <br>
+
+<a name="5"></a>
 
 ## Send the Location
 ```js
