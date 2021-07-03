@@ -48,6 +48,20 @@ brazuka.sendMessage(phones, message)
 
 <br>
 
+
+## Send the Image
+```js
+const brazuka = require('brazuka-zap')
+
+const phone  = '558812345678'
+const path   = 'path/to/image.jpg'
+const imageName = 'my-image-name'
+const text = 'my-caption'
+
+brazuka.sendImage(phone, path, imageName, message)
+``` 
+<br>
+
 ## Send the link preview
 ```js
 const brazuka = require('brazuka-zap')
@@ -57,5 +71,19 @@ const link   = 'https://youtu.be/RIjTq_OdFvo'
 const message = 'You\'re still in bed at ten\nAnd work began at eight'
 
 brazuka.sendLinkPreview(phone, message)
+``` 
+
+<br>
+
+## Send the Location
+```js
+const brazuka = require('brazuka-zap')
+
+const phone  = '558812345678'
+const latitude = '-3.7594297599906294'
+const longitude = '-40.81624143391349'
+const text = 'You\'re still in bed at ten\nAnd work began at eight'
+
+brazuka.sendLocation(phone, latitude, longitude, text)
 ``` 
 
