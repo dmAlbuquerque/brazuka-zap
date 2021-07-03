@@ -104,7 +104,7 @@ async function sendLocation(phone: string, latitude: string, longitude: string, 
   create('Brazuka-Zap')
     .then((client) => {
       client
-        .sendImage(
+        .sendLocation(
           phone + "" + prefix,
           latitude,
           longitude,
