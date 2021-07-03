@@ -53,7 +53,7 @@ brazuka.sendMessage(phone, message)
 ```js
 const brazuka = require('brazuka-zap')
 
-const phones  = ['558812345678']['556187654321']
+const phones  = ['558812345678','556187654321']
 const message = 'When the rain starts to pour'
 
 brazuka.sendMessage(phones, message)
@@ -104,4 +104,16 @@ const text = 'You\'re still in bed at ten\nAnd work began at eight'
 
 brazuka.sendLocation(phone, latitude, longitude, text)
 ``` 
+<br>
+
+## 🛠 Coming soon 🛠
+New functions will be added soon.
+<br>
+
+## 🚀 Contribution
+Contributions make the open source community an amazing place to learn, inspire and create. Any contribution you make will be **much appreciated**.
+<br>
+
+## ✔️ License
+Distributed under license [MIT](LICENSE). © Daniel Albuquerque
 
