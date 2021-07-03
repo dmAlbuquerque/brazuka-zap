@@ -1,6 +1,6 @@
 {
   "name": "brazuka-zap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Provides an API to send bulk messages via WhatsApp based on Venom Bot",
   "main": "dist/app.js",
   "scripts": {
@@ -9,7 +9,20 @@
     "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "whatsapp",
+    "whatsapp-library",
+    "whatsapp-sender",
+    "whatsapp-send-message",
+    "whatsapp-api",
+    "free-whatsapp-api",
+    "free-api",
+    "whatsapp-business",
+    "send-message",
+    "brazuka",
+    "brasil",
+    "brazil"
+  ],
   "author": "Daniel Albuquerque",
   "license": "MIT",
   "dependencies": {

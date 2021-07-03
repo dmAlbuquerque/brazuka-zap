@@ -1,5 +1,10 @@
 import { create } from 'venom-bot';
 
+/**
+ * Send a message to one or more contacts of WhatsApp
+ * @param phones type array
+ * @param message type string
+ */
 async function sendMessage(phones: [], message: string) {
   const prefix = '@c.us'
   create('Brazuka-Zap')
@@ -25,7 +30,13 @@ async function sendMessage(phones: [], message: string) {
     });
 }
 
-async function sendLinkPreview(phone: string, link: string, title: string) {
+/**
+ * Send a message with link preview of video for a contact of WhatsApp
+ * @param phone type string
+ * @param link type string
+ * @param message type string
+ */
+async function sendLinkPreview(phone: string, link: string, message: string) {
   const prefix = '@c.us'
   create('Brazuka-Zap')
     .then((client) => {
@@ -33,7 +44,7 @@ async function sendLinkPreview(phone: string, link: string, title: string) {
         .sendLinkPreview(
           phone + "" + prefix,
           link,
-          title
+          message
         )
         .then((result) => {
           console.log('Result: ', result); //return object success
