@@ -11,19 +11,30 @@ async function sendMessage(phones: string | [], message: string) {
   create('Brazuka-Zap')
     .then((client) => {
 
-      for (var i = 0; i < phones.length; i++) {
-        console.log(`Sending message to: ${phones[i]}\n`)
-
-        client.sendText(phones[i] + "" + prefix, message)
+      if(typeof phones != 'string'){
+        for (var i = 0; i < phones.length; i++) {
+          console.log(`Sending message to: ${phones[i]}\n`)
+          client.sendText(phones[i] + "" + prefix, message)
+            .then((result) => {
+              console.log(`Message successfully sent.\n`);
+              console.log(result)
+            })
+            .catch((erro) => {
+              console.log(`An error occurred while trying to send the message`)
+              console.log(erro)
+            });
+        }
+      }else{
+        console.log(`Sending message to: ${phones}\n`)
+        client.sendText(phones + "" + prefix, message)
           .then((result) => {
-            console.log(`Message successfully sent to: ${phones[i]}\n`);
+            console.log(`Message successfully sent.\n`);
             console.log(result)
           })
           .catch((erro) => {
-            console.log(`An error occurred while trying to send the message to: ${phones[i]}`)
+            console.log(`An error occurred while trying to send the message.`)
             console.log(erro)
           });
-
       }
     })
     .catch((erro) => {
