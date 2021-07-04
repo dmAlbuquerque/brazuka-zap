@@ -25,6 +25,10 @@
   ],
   "author": "Daniel Albuquerque",
   "license": "MIT",
+    "bugs": {
+    "url": "https://github.com/dmAlbuquerque/brazuka-zap/issues"
+  },
+  "homepage": "https://github.com/dmAlbuquerque/brazuka-zap#readme",
   "dependencies": {
     "brazuka-formatter": "^0.0.1",
     "venom-bot": "^3.0.20"
