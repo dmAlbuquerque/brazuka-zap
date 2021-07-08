@@ -25,6 +25,7 @@ At the beginning it will display a QR Code on Terminal, just scan it using Whats
 <br>
 
 # Table of Contents
+0. [Start] (#0)
 1. [Send message to one contact](#1)
 2. [Send the same message to many contacts](#2)
 3. [Send the image](#3)
@@ -32,6 +33,27 @@ At the beginning it will display a QR Code on Terminal, just scan it using Whats
 5. [Send the location](#5)
 
 <br>
+
+<a name="0"></a>
+
+## Start
+With the start function, you can define a name for the session (passed as a string parameter), so you can have multiple WhatsApp sessions at the same time.
+
+<blockquote>
+For the library to work correctly it is necessary to run the functions using async and await.
+</blockquote>
+
+<br>
+
+```js
+import BrazukaZap from 'brazuka-zap';
+
+async function test(){
+	var brazuka = await new BrazukaZap();
+	await brazuka.start(); // or await brazuka.start('session_name');
+}
+
+```
 
 <a name="1"></a>
 
