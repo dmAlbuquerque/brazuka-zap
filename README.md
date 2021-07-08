@@ -1,7 +1,8 @@
 # Send messages for free via WhatsApp
 
 ## Note
-**Brazuka-Zap** is an **unofficial** solution. We are not responsible for its use in production.
+**Brazuka-Zap** is an **unofficial** solution. We are not responsible for its use in production. 
+
 
 <br>
 
@@ -25,18 +26,18 @@ At the beginning it will display a QR Code on Terminal, just scan it using Whats
 <br>
 
 # Table of Contents
-0. [Start] (#0)
-1. [Send message to one contact](#1)
-2. [Send the same message to many contacts](#2)
-3. [Send the image](#3)
-4. [Send the link preview](#4)
-5. [Send the location](#5)
+1. [Start Very Important](#1)
+2. [Send message to one contact](#2)
+3. [Send the same message to many contacts](#3)
+4. [Send the image](#4)
+5. [Send the link preview](#5)
+6. [Send the location](#6)
 
 <br>
 
-<a name="0"></a>
+<a name="1"></a>
 
-## Start
+## Very Important
 With the start function, you can define a name for the session (passed as a string parameter), so you can have multiple WhatsApp sessions at the same time.
 
 <blockquote>
@@ -48,82 +49,85 @@ For the library to work correctly it is necessary to run the functions using asy
 ```js
 import BrazukaZap from 'brazuka-zap';
 
+test()
+
 async function test(){
 	var brazuka = await new BrazukaZap();
 	await brazuka.start(); // or await brazuka.start('session_name');
 }
 ```
 
-<a name="1"></a>
+<a name="2"></a>
 
 ## Send message to one contact
 ```js
-const brazuka = require('brazuka-zap')
+import BrazukaZap from 'brazuka-zap';
+
 
 const phone = ['558812345678']
 const message = 'I\'ll be there for you'
 
-brazuka.sendMessage(phone, message)
-``` 
-
-<br>
-
-<a name="2"></a>
-
-## Send the same message to many contacts
-```js
-const brazuka = require('brazuka-zap')
-
-const phones  = ['558812345678','556187654321']
-const message = 'When the rain starts to pour'
-
-brazuka.sendMessage(phones, message)
+await brazuka.sendMessage(phone, message)
 ``` 
 
 <br>
 
 <a name="3"></a>
 
-## Send the Image
+## Send the same message to many contacts
 ```js
-const brazuka = require('brazuka-zap')
+import BrazukaZap from 'brazuka-zap';
 
-const phone  = '558812345678'
-const path   = 'path/to/image.jpg'
-const imageName = 'my-image-name'
-const text = 'my-caption'
+const phones  = ['558812345678','556187654321']
+const message = 'When the rain starts to pour'
 
-brazuka.sendImage(phone, path, imageName, text)
+await brazuka.sendMessage(phones, message)
 ``` 
+
 <br>
 
 <a name="4"></a>
 
+## Send the Image
+```js
+import BrazukaZap from 'brazuka-zap';
+
+const phone  = '558812345678'
+const path   = 'path/to/image.jpg'
+const imageName = 'my-image-name'
+const caption = 'my-caption'
+
+await brazuka.sendImage(phone, path, imageName, caption)
+``` 
+<br>
+
+<a name="5"></a>
+
 ## Send the link preview
 ```js
-const brazuka = require('brazuka-zap')
+import BrazukaZap from 'brazuka-zap';
 
 const phone  = '558812345678'
 const link   = 'https://youtu.be/RIjTq_OdFvo'
 const message = 'You\'re still in bed at ten\nAnd work began at eight'
 
-brazuka.sendLinkPreview(phone, message)
+await brazuka.sendLinkPreview(phone, message)
 ``` 
 
 <br>
 
-<a name="5"></a>
+<a name="6"></a>
 
 ## Send the Location
 ```js
-const brazuka = require('brazuka-zap')
+import BrazukaZap from 'brazuka-zap';
 
 const phone  = '558812345678'
 const latitude = '-3.7594297599906294'
 const longitude = '-40.81624143391349'
-const text = 'You\'re still in bed at ten\nAnd work began at eight'
+const local = 'Brasil'
 
-brazuka.sendLocation(phone, latitude, longitude, text)
+await brazuka.sendLocation(phone, latitude, longitude, local)
 ``` 
 <br>
 
