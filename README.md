@@ -52,7 +52,6 @@ async function test(){
 	var brazuka = await new BrazukaZap();
 	await brazuka.start(); // or await brazuka.start('session_name');
 }
-
 ```
 
 <a name="1"></a>
