@@ -3,8 +3,10 @@ import { create } from 'venom-bot';
 class BrazukaZap {
 	private client: any;
 
-	async start(session = 'Brazuka-Zap') {
-		this.client = await create(session);
+	async start(session:any = 'Brazuka-Zap') {
+		return this.client = await create(session, (base64Qrimg) => {
+			console.log('qrcode_base64', base64Qrimg);
+		});
 	}
 
 	private async sendMessagePrivate(phone: string, message: string) {
