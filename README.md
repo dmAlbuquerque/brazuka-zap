@@ -64,7 +64,7 @@ async function test(){
 import BrazukaZap from 'brazuka-zap';
 
 
-const phone = ['558812345678']
+const phone = '558812345678'
 const message = 'I\'ll be there for you'
 
 await brazuka.sendMessage(phone, message)
