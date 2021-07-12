@@ -145,25 +145,25 @@ try {
 	await zap.start();
 
 	zap.onMessage((msg: any) => {
-		switch (msg.body.toLowerCase()) {
-			case 'hi': {
-				zap.sendMessage(msg.from, 'Hello, welcome to my awesome company!')
-				break
-				}
-			case 'catalog': {
-				zap.sendMessage(msg.from, 'Alright, I\'ll be sending you our product catalog!')
-				break
-				}
-			case 'address': {
-				zap.sendMessage(msg.from, 'Our address is: 666 Park Avenue')
-				break
-				}
-			default: {
-				zap.sendMessage(msg.from, 'Sorry, I couldn\'t understand, I\'m still learning about your world! 🤖')
-				break
-				}
-			}
-		})
+	switch (msg.body.toLowerCase()) {
+		case 'hi': {
+		zap.sendMessage(msg.from, 'Hello, welcome to my awesome company!')
+		break
+		}
+		case 'catalog': {
+		zap.sendMessage(msg.from, 'Alright, I\'ll be sending you our product catalog!')
+		break
+		}
+		case 'address': {
+		zap.sendMessage(msg.from, 'Our address is: 666 Park Avenue')
+		break
+		}
+		default: {
+		zap.sendMessage(msg.from, 'Sorry, I couldn\'t understand, I\'m still learning about your world! 🤖')
+		break
+		}
+	}
+})
 	} catch (err) {
 		console.log(err)
 	}
@@ -172,10 +172,10 @@ try {
 ## Example Response
 ```json
 {
-  phone: '558812345678-1646089273',
-  message: 'Hello, welcome to my awesome company!',
-  status: 'OK',
-  error: false
+  "phone": "558812345678-1646089273",
+  "message": "Hello, welcome to my awesome company!",
+  "status": "OK",
+  "error": false
 }
 ```
 
