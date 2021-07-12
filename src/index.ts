@@ -3,24 +3,50 @@ import { create } from 'venom-bot';
 class BrazukaZap {
 	private client: any;
 
-	async start(session:any = 'Brazuka-Zap') {
+	async start(session: any = 'Brazuka-Zap') {
 		return this.client = await create(session, (base64Qrimg) => {
 			console.log('qrcode_base64', base64Qrimg);
 		});
 	}
 
+	/**
+	 * Creates a bot that replies to the user who sent a message.
+	 * 
+	 */
+	onMessage(msg: any) {
+		try {
+			this.client.onMessage(async (message: any) => {
+				msg(message)
+			})
+		} catch (error) {
+			console.log(error)
+		}
+	}
+
 	private async sendMessagePrivate(phone: string, message: string) {
-		const prefix = '@c.us'
+		try {
 
-		console.log(`Sending message to: ${phone}\n`)
-		var result = await this.client.sendText(phone + "" + prefix, message)
+			var prefix = ''
 
-		var log = { phone, message, 'status': result.status, 'error': result.erro }
+			if (phone.includes('@c.us')) {//se for true, é um chat
+				phone = phone.split('@c.us').join('')
+				prefix = '@c.us'
+			} else {//se for false é um grupo
+				phone = phone.split('@g.us').join('')
+				prefix = '@g.us'
+			}
 
-		console.log(log)
+			console.log(`Sending message to: ${phone}\n`)
+			var result = await this.client.sendText(phone + "" + prefix, message)
 
-		return log
+			var log = { phone, message, 'status': result.status, 'error': result.erro }
 
+			console.log(log)
+
+			return log
+		} catch (error) {
+			console.log(error)
+		}
 	}
 
 	/**

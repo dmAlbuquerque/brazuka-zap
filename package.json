@@ -1,13 +1,15 @@
 {
   "name": "brazuka-zap",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Provides an API to send bulk messages via WhatsApp based on Venom Bot",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc -p .",
     "dev": "ts-node-dev --inspect --ignore-watch node_modules src/index.ts",
-    "start": "tsc -p . && node ./dist/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod": "node ./dist/index.ts",
+    "start": "npm run build && npm run prod",
+    "test_file": "node ./dist/test/module.test.js",
+    "test": "npm run build && npm run test_file"
   },
   "keywords": [
     "whatsapp",
