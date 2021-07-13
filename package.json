@@ -1,15 +1,13 @@
 {
   "name": "brazuka-zap",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Provides an API to send bulk messages via WhatsApp based on Venom Bot",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -p .",
-    "dev": "ts-node-dev --inspect --ignore-watch node_modules src/index.ts",
-    "prod": "node ./dist/index.ts",
-    "start": "npm run build && npm run prod",
-    "test_file": "node ./dist/test/module.test.js",
-    "test": "npm run build && npm run test_file"
+    "build": "tsc --declaration",
+    "dev": "nodemon --watch \"src//\" --exec \"ts-node src/sample.ts\" -e ts",
+    "start": "npm run build && npm run dev"
   },
   "keywords": [
     "whatsapp",
@@ -34,10 +32,13 @@
   "homepage": "https://github.com/dmAlbuquerque/brazuka-zap#readme",
   "dependencies": {
     "brazuka-formatter": "^0.0.1",
-    "venom-bot": "^3.0.20"
+    "spinnies": "^0.5.1",
+    "venom-bot": "^3.0.0"
   },
   "devDependencies": {
-    "ts-node-dev": "^1.1.6",
-    "typescript": "^4.2.4"
+    "@types/node": "^16.3.1",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.0.1",
+    "typescript": "^4.3.5"
   }
 }
