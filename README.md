@@ -141,13 +141,13 @@ The Bot will be listening to WhatsApp connected, and when it receives a new mess
 
 ```js
 try {
-var zap = new BrazukaZap();
+  var zap = new BrazukaZap();
 	await zap.start();
 
 	zap.onMessage((msg: any) => {
 	switch (msg.body.toLowerCase()) {
 		case 'hi': {
-			zap.sendMessage(msg.from, 'Hello, welcome to my awesome company!')
+			zap.sendMessage(msg.from, `Hello ${msg.sender.pushname}, welcome to my awesome company!`)
 			break
 		}
 		case 'catalog': {
