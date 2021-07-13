@@ -1,4 +1,4 @@
-import BrazukaZap from '..';
+import BrazukaZap from './index';
 
 test()
 

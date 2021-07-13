@@ -46,6 +46,7 @@ class BrazukaZap {
 			return log
 		} catch (error) {
 			console.log(error)
+			return error
 		}
 	}
 
