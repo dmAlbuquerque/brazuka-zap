@@ -1,6 +1,6 @@
 {
   "name": "brazuka-zap",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Provides an API to send bulk messages via WhatsApp based on Venom Bot",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

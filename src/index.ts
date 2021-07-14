@@ -2,11 +2,20 @@ import { create } from 'venom-bot';
 
 class BrazukaZap {
 	private client: any;
+	public isLogged: any;
+	public qrcodeBase64: any
 
 	async start(session: any = 'Brazuka-Zap') {
 		return this.client = await create(session, (base64Qrimg) => {
-			console.log('qrcode_base64', base64Qrimg);
-		});
+			this.qrcodeBase64 = base64Qrimg
+			//console.log('qrcode_base64', base64Qrimg);
+		},
+    // statusFind
+    (statusSession) => {
+      console.log('Status Session: ', statusSession); //return isLogged || notLogged || browserClose || qrReadSuccess || qrReadFail || autocloseCalled || desconnectedMobile || deleteToken || chatsAvailable || deviceNotConnected || serverWssNotConnected || noOpenBrowser
+				this.isLogged = statusSession
+			}
+		);
 	}
 
 	/**
