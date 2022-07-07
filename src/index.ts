@@ -6,16 +6,10 @@ class BrazukaZap {
 	public qrcodeBase64: any
 
 	async start(session: any = 'Brazuka-Zap') {
-		return this.client = await create(session, (base64Qrimg) => {
-			this.qrcodeBase64 = base64Qrimg
-			//console.log('qrcode_base64', base64Qrimg);
-		},
-    // statusFind
-    (statusSession) => {
-      console.log('Status Session: ', statusSession); //return isLogged || notLogged || browserClose || qrReadSuccess || qrReadFail || autocloseCalled || desconnectedMobile || deleteToken || chatsAvailable || deviceNotConnected || serverWssNotConnected || noOpenBrowser
-				this.isLogged = statusSession
-			}
-		);
+		return this.client = await create({
+			session: session,
+			multidevice: true
+		});
 	}
 
 	/**
@@ -37,12 +31,12 @@ class BrazukaZap {
 
 			var prefix = ''
 
-			if (phone.includes('@c.us')) {//se for true, é um chat
-				phone = phone.split('@c.us').join('')
-				prefix = '@c.us'
-			} else {//se for false é um grupo
+			if (phone.includes('@g.us')) {//se for true, é um grupo
 				phone = phone.split('@g.us').join('')
 				prefix = '@g.us'
+			} else {//se for false é um chat
+				phone = phone.split('@c.us').join('')
+				prefix = '@c.us'
 			}
 
 			console.log(`Sending message to: ${phone}\n`)
@@ -79,8 +73,6 @@ class BrazukaZap {
 		} else {
 			return await this.sendMessagePrivate(phones, message)
 		}
-
-
 	}
 
 	private async sendImagePrivate(phone: string, path: string, imageName: string, caption: string) {

@@ -33,7 +33,7 @@
   "dependencies": {
     "brazuka-formatter": "^0.0.1",
     "spinnies": "^0.5.1",
-    "venom-bot": "^3.0.21"
+    "venom-bot": "^4.2.0"
   },
   "devDependencies": {
     "@types/node": "^16.3.1",
